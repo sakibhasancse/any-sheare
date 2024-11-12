@@ -1,0 +1,31 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: "../backend"
+      dockerfile: Dockerfile
+    container_name: "backend"
+    volumes:
+      - ./../:/app
+    working_dir: /app/backend
+    environment:
+      PORT : 8080
+    ports:
+      - "8080:8080" 
+    command: sh -c "pnpm install && pnpm run start:dev"
+
+  frontend:
+    build:
+      context: "../frontend"
+      dockerfile: Dockerfile
+    container_name: "frontend"
+    volumes:
+      - ./../:/app
+    working_dir: /app/frontend
+    environment:
+      PORT: 3300
+    ports:
+      - "3300:3300" 
+    command: sh -c "pnpm install && pnpm run dev"
+
+    

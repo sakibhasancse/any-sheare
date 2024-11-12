@@ -1,0 +1,22 @@
+{
+  "identities": [
+    {
+      "name": "anonymous",
+      "actions": [
+        "Read"
+      ]
+    },
+    {
+      "name": "system",
+      "credentials": [
+        {
+          "accessKey": "TEST",
+          "secretKey": "TESTKEY"
+        }
+      ],
+      "actions": [
+        "*"
+      ]
+    }
+  ]
+}
